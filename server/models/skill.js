@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Skill.associate = function(models) {
     Skill.belongsTo(models.User)
+    Skill.belongsToMany(models.Category, {through: 'SkillCategories'})
   };
   return Skill;
 };
