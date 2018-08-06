@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Category.associate = function(models) {
-    Category.belongsToMany(models.Skills, {through :'SkillCategories'})
+    Category.belongsToMany(models.Skill, {through :'SkillCategories'})
   };
   return Category;
 };
