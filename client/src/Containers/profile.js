@@ -13,6 +13,11 @@ const A =styled.a`
   `
 
 class Profile extends Component {
+  componentDidMount(){
+    fetch('api/users')
+      .then(res => res.json())
+      .then(json=>{console.log(json)})
+  }
   render() {
     return (
       <div>
@@ -24,6 +29,7 @@ class Profile extends Component {
         <A><img src="../../public/envelope.svg"></img></A>
         <A></A>
       </Nav>
+      
       </div>
     );
   }
